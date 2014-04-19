@@ -1,15 +1,15 @@
-## Web Chat
+## NodeJS Web Chat with Smileys
 This is a simple socket based web chat app.
 It's built with NodeJS, Jade, Express and SocketIO on the backend and jQuery, Bootstrap and SocketIO on the frontend.
 
 ## Usage
 * This application requires that you have:
         
-        NodeJS installed
+        NodeJS installed (download it from http://nodejs.org/)
 
 ### Local
 * Clone the repo
-* run the following commands 
+* run the following commands inside the project folder
         
         npm install
         node app.js
@@ -22,5 +22,3 @@ It's built with NodeJS, Jade, Express and SocketIO on the backend and jQuery, Bo
 
 
 * The app should be running at [localhost:3000](http://localhost:3000)
-
-Copyright (c) 2013 Radu B. Gaspar
