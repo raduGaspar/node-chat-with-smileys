@@ -14,11 +14,10 @@ It's built with NodeJS, Jade, Express and SocketIO on the backend and jQuery, Bo
         npm install
         node app.js
 
+* The app should be running at [localhost:3000](http://localhost:3000)
+
 ### In the wild
 * If you're planning on running this on a server:
         
         Open the "public\js\scripts.js" file
         Change the "serverHost" variable to point to your Node server (as localhost is used by default)
-
-
-* The app should be running at [localhost:3000](http://localhost:3000)
