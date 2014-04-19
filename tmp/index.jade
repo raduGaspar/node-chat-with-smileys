@@ -1,0 +1,89 @@
+doctype
+html
+    head
+        title= "RBG Chat"
+        link(href='/css/bootstrap.min.css' type='text/css' rel='stylesheet')
+        link(href='/css/bootstrap-theme.min.css' type='text/css' rel='stylesheet')
+        link(href='/css/styles.css' type='text/css' rel='stylesheet')
+
+        script(src='/js/libs/jquery-1.11.0.min.js' type='text/javascript')
+        script(src='/js/libs/jquery.tmpl.min.js' type='text/javascript')
+        script(src='/js/libs/moment.min.js' type='text/javascript')
+        script(src='/js/libs/bootstrap.min.js' type='text/javascript')
+        script(src='/socket.io/socket.io.js' type='text/javascript')
+    body
+        .main
+            .panel.panel-primary
+                .panel-heading.clearfix
+                    .pull-left
+                        button.btn.btn-primary.btn-sm
+                            span.glyphicon.glyphicon-comment
+                            | &nbsp;Chat
+                    div.btn-group.pull-right
+                        button.btn.btn-primary.btn-sm.dropdown-toggle(type='button', data-toggle='dropdown')
+                            | Status&nbsp;
+                            span.caret
+                        ul.dropdown-menu.slidedown(role="menu")
+                            li
+                                a.status(href="#", data-status="available")
+                                    span.glyphicon.glyphicon-ok-sign
+                                    | Available
+                            li
+                                a.status(href="#", data-status="busy")
+                                    span.glyphicon.glyphicon-remove
+                                    | Busy
+                            li
+                                a.status(href="#", data-status="away")
+                                    span.glyphicon.glyphicon-time
+                                    | Away
+                            li.divider
+                            li
+                                a(href="#")
+                                    span.glyphicon.glyphicon-off
+                                    | Sign Out
+                .panel-body.chat-panel-body
+                    ul.chat
+                .panel-footer
+                    form
+                        .input-group
+                            input.message.form-control.input-sm(type="text", placeholder="Type your message here...")
+                            span.input-group-btn
+                                input.send.btn.btn-warning.btn-sm(type='submit', value="Send")
+                                button.smilie.btn.btn-default.btn-sm(type='button', data-toggle='tooltip', data-placement='top', title='Smilies')
+                                    img(src='/img/1.gif' alt='smiley')
+
+            .panel.panel-default.supported-smilies.hide
+                .panel-heading
+                    span
+                        strong Supported Smilies
+                .panel-body.smiley-grid
+                .panel-footer
+                    span Hover the smiley to get a hint
+
+        script#users-message-template(type="text/x-tmpl")
+            li.left.clearfix
+                span.chat-img.pull-left
+                    //img.img-circle(src="" alt="User Avatar")
+                    span.glyphicon.glyphicon-user
+                .chat-body.clearfix
+                    .header
+                        strong.primary-font ${username}
+                        small.pull-right.text-muted
+                            span.glyphicon.glyphicon-time
+                            | ${time}
+                    p {{html message}}
+
+        script#own-message-template(type="text/x-tmpl")
+            li.right.clearfix
+                span.chat-img.pull-right
+                    //img.img-circle(src="" alt="My Avatar")
+                    span.glyphicon.glyphicon-user
+                .chat-body.clearfix
+                    .header
+                        small.text-muted
+                            span.glyphicon.glyphicon-time
+                            | ${time}
+                        strong.pull-right.primary-font ${username}
+                    p {{html message}}
+
+        script(src='/js/scripts.js' type='text/javascript')

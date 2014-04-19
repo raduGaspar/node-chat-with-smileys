@@ -1,0 +1,11 @@
+{
+    "name": "webchat",
+    "version": "0.0.1",
+    "description": "A simple real time web chat",
+    "dependencies": {
+        "socket.io": "latest",
+        "express": "latest",
+        "jade": "latest"
+    },
+    "author": "Radu B. Gaspar"
+}
